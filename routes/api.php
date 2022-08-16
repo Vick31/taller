@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Sanctum\Sanctum;
+use App\Http\Controllers\api\NewPasswordController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +31,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
 });
 
-Route::post('forgot-password', [NewPasswordController::class, 'forgotPassword']);
+Route::post('forgot-password', [NewPasswordController::class, 'ForgotPassword']);
 
-Route::post('reset-password', [NewPasswordController::class, 'reset']);
+Route::post('reset-password', [NewPasswordController::class, 'Reset']);

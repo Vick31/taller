@@ -55,20 +55,13 @@ class NewPasswordController extends Controller {
         );
 
         if ($status == Password::PASSWORD_RESET) {
-            // return response([
-            //     'message' => 'La contraseña se ha restablecido.'
-            // ]);
-
-            return redirect()->route('viewlogin')
-                ->with('message', 'La contraseña se cambio correctamente');
+            return response([
+                'message' => 'La contraseña se ha restablecido.'
+            ]);
         }
 
-        // return response([
-        //     'message' => __($status)
-        // ], 500);
-
-
-        return redirect()->route('viewlogin')
-        ->with('message', 'El link ya expiro');
+        return response([
+            'message' => __($status)
+        ], 500);
     }
 }
