@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class CompanyFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,10 +15,9 @@ class UserFactory extends Factory
     {
         return [
             'name'=>$this->faker->name(),
-            'email'=>$this->faker->text($maxNbChars = 70),
-            'password'=> $this->faker->password(),
-            'roles_id'=>$this->faker->numberBetween($min = 1, $max = 6),
-            'companies_id'=>$this->faker->numberBetween($min = 1, $max = 6),
+            'logo'=>$this->faker->imageUrl($width = 640, $height = 480),
+            'address'=>$this->faker->address(),
+            'phone'=>$this->faker->tollFreePhoneNumber(),
         ];
     }
 }
