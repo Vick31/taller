@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +34,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('forgot-password', [NewPasswordController::class, 'ForgotPassword']);
 
 Route::post('reset-password', [NewPasswordController::class, 'reset']);
+
+Route::resource('/articles', ArticleController::class);
