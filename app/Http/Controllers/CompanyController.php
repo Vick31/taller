@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\companies;
 use App\Models\company;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies_list = companies::all();
+        return response ([
+            'companies' => $companies_list->shuffle()
+        ]);
     }
 
     /**
@@ -44,7 +48,7 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show(company $company)
+    public function show(companies $company)
     {
         //
     }
@@ -55,7 +59,7 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit(company $company)
+    public function edit(companies $company)
     {
         //
     }
@@ -67,7 +71,7 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, company $company)
+    public function update(Request $request, companies $company)
     {
         //
     }
@@ -78,8 +82,16 @@ class CompanyController extends Controller
      * @param  \App\Models\company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(company $company)
+    public function destroy(companies $company)
     {
         //
+    }
+
+    public function companyArticles($id) {
+
+        $company = companies::find($id);
+        return response([
+            'article_list' => $company->articles //articles es la función del modelo con la relación de 1 a muchos
+        ]);
     }
 }
