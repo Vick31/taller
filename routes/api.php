@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\Api\AuthController;
 use Illuminate\Http\Request;
@@ -37,6 +38,7 @@ Route::post('forgot-password', [NewPasswordController::class, 'ForgotPassword'])
 Route::post('reset-password', [NewPasswordController::class, 'reset']);
 
 Route::resource('/articles', ArticleController::class);
+Route::resource('/ingrediente', IngredienteController::class);
 
 Route::resource('/companies', CompanyController::class);
 Route::post('/company-articles/{id}', [CompanyController::class, 'companyArticles']);

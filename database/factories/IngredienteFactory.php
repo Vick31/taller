@@ -16,6 +16,7 @@ class IngredienteFactory extends Factory
         return [
             'articles_id'=>$this->faker->numberBetween($min = 1, $max = 50 ),
             'name'=>$this->faker->name(),
+            'logo'=>$this->faker->imageUrl($width = 640, $height = 480),
             'price'=>$this->faker->numberBetween($min = 100, $max =2000 ),
         ];
     }

@@ -14,7 +14,7 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'companies_id'=>$this->faker->numberBetween($min = 1, $max = 10),
+            'companies_id'=>$this->faker->numberBetween($min = 1, $max = 6),
             'name'=> $this->faker->company(),
             'price'=>$this->faker->numberBetween($min = 20000, $max = 1200000),
             'image' =>$this->faker->imageUrl('cats', true, 'Faker'),

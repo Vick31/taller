@@ -14,7 +14,10 @@ class IngredienteController extends Controller
      */
     public function index()
     {
-        //
+        $ingrediente_list = ingrediente::all();
+        return response ([
+            'ingrediente' => $ingrediente_list->shuffle()
+        ]);
     }
 
     /**

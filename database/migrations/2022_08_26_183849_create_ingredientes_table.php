@@ -17,6 +17,7 @@ class CreateIngredientesTable extends Migration
             $table->id();
             $table->foreignId('articles_id')->constrained();
             $table->string('name', 50);
+            $table->string('logo');
             $table->string('price');
             $table->timestamps();
         });
