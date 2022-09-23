@@ -25,8 +25,6 @@ class DatabaseSeeder extends Seeder
             InvoiceSeeder::class,
             InvoiceDetailSeeder::class,
             OptionSeeder::class,
-
-
         ]);
     }
 }
